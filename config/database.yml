@@ -1,18 +1,22 @@
 common: &common
   adapter: postgresql
   encoding: unicode
-  database: db_test
-  username: pg_test
-  password: test
+  
 
 development:
   <<: *common
+  database: db_dev
+  username: pg_dev
+  password: dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
   <<: *common
+  database: db_test
+  username: pg_test
+  password: test
 
 production:
   <<: *common
